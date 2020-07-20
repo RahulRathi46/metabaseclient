@@ -1,3 +1,1 @@
-from .core import Client
-
-
+from .Client import Client
