@@ -4,6 +4,19 @@ from requests import post
 
 
 class Authenticate:
+    ''' Authenticate is core class which provides metabase
+        session.
+
+        Attributes:
+            url (str) : metabase host. default value None
+            username (str) : metabase username. default value None
+            password (str) : metabase password. default value None
+            token (str) : metabase session token. default value None
+
+        Return:
+            class object
+    '''
+
     url = ''
     username = ''
     password = ''
@@ -11,6 +24,14 @@ class Authenticate:
     api_endpoint = '/api/session'
 
     def get_token(self):
+
+        '''get_token return metabase session token after
+            login is successful else None
+
+            Return:
+                token (str)
+        '''
+
         return self.token
 
     def set_token(self, token):
@@ -21,9 +42,10 @@ class Authenticate:
             "Content-Type": "application/json"
         }
 
-        payload = {"username": username,
-                   "password": password
-                   }
+        payload = {
+            "username": username,
+            "password": password
+        }
 
         session = post(url + self.api_endpoint,
                        data=dumps(payload),

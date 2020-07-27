@@ -1,10 +1,19 @@
-Sample Module Repository
+Metabase Client
 ========================
 
-This simple project is an example repo for Python projects.
+A python wrapper for metabse api
 
-`Learn more <http://www.kennethreitz.org/essays/repository-structure-and-python>`_.
+--------------
+
+Index
+
+- Installation
+- Usage
 
 ---------------
 
-If you want to learn more about ``setup.py`` files, check out `this repository <https://github.com/kennethreitz/setup.py>`_.
+Full Documention Under Development
+
+
+
+
