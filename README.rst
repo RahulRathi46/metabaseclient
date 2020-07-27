@@ -12,7 +12,7 @@ Index
 
 ---------------
 
-Full Documention Under Development
+Full Documentation Under Development
 
 
 
