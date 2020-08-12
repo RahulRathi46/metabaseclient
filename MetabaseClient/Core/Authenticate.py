@@ -25,7 +25,8 @@ class Authenticate:
 
     def get_token(self):
 
-        '''get_token return metabase session token after
+        '''
+            get_token return metabase session token after
             login is successful else None
 
             Return:
@@ -35,9 +36,27 @@ class Authenticate:
         return self.token
 
     def set_token(self, token):
+
+        '''
+            set_token metabase session token after
+            login is successful else None
+
+            Return:
+                None
+        '''
+
         self.token = token
 
     def authenticate(self, url, username, password):
+
+        '''
+            authenticate function takes url, username,
+            password to login.
+
+            Return:
+                token (str)
+        '''
+
         headers = {
             "Content-Type": "application/json"
         }
@@ -52,13 +71,27 @@ class Authenticate:
                        headers=headers
                        )
 
-        if session.ok == True:
+        if loads(session.content)['id']:
             self.token = loads(session.content)['id']
             return self.token
         else:
-            return session.status_code
+            raise Exception('Authentication failed')
 
     def __init__(self, url=None, username=None, password=None, token=None):
+
+        '''
+        class constructor
+
+        Attributes:
+            url (str) : metabase host. default value None
+            username (str) : metabase username. default value None
+            password (str) : metabase password. default value None
+            token (str) : metabase session token. default value None
+
+        Return:
+            class object
+        '''
+
         self.url = url
         self.username = username
         self.password = password

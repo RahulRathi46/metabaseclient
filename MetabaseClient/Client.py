@@ -1,6 +1,7 @@
 from .Core import Authenticate
 from .Core import Card
 from .Core import Dashboard
+from .Core import Util
 
 
 class Client(Authenticate):
@@ -16,3 +17,6 @@ class Client(Authenticate):
 
     def dashboard(self):
         return Dashboard(self.url, self.get_token())
+
+    def utils(self):
+        return Util((self.url, self.get_token()))

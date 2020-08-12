@@ -1,5 +1,4 @@
 from re import search
-
 from ..Client import Client
 
 
@@ -10,7 +9,8 @@ class SearchCard(Client):
         super().__init__(url, username, password, token)
 
     def search_by_keyword(self, keyword):
-        cards = self.card().get_card()
+        cards = self.card().get()
+        self.results = []
 
         for i in cards:
             try:
@@ -26,7 +26,8 @@ class SearchCard(Client):
         return self.results
 
     def search_by_email(self, email):
-        cards = self.card().get_card()
+        cards = self.card().get()
+        self.results = []
 
         for i in cards:
             try:
@@ -41,7 +42,8 @@ class SearchCard(Client):
         return self.results
 
     def search_by_name(self, name):
-        cards = self.card().get_card()
+        cards = self.card().get()
+        self.results = []
 
         for i in cards:
             try:
@@ -56,8 +58,8 @@ class SearchCard(Client):
         return self.results
 
     def search_by_regex(self, regex_string):
-
-        cards = self.card().get_card()
+        cards = self.card().get()
+        self.results = []
 
         for i in cards:
             try:
@@ -73,8 +75,8 @@ class SearchCard(Client):
         return self.results
 
     def search_by_function(self, function):
-
-        cards = self.card().get_card()
+        cards = self.card().get()
+        self.results = []
 
         for i in cards:
             try:
