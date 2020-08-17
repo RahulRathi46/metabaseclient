@@ -1,7 +1,7 @@
 Metabase Client
 ========================
 
-A python wrapper for metabse api
+A python wrapper for metabase api
 
 --------------
 
